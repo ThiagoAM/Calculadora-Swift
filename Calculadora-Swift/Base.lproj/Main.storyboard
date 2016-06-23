@@ -2703,7 +2703,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TK0-sy-ggp" userLabel="View de Objetos SV">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="345"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="∜16    =    4 → ˣ√ → 16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="7by-Fe-b8a">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="∛27    =    3 → ˣ√ → 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="7by-Fe-b8a">
                                                         <rect key="frame" x="8" y="53" width="384" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="1hC-9G-BWa"/>

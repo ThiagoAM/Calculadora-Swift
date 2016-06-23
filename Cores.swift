@@ -700,7 +700,6 @@ extension ViewController {
             
             // Altera a cor e largura da borda do teclado:
             colocaBordaEmTodosOsBotoesTecladoCalculo(corFundoSpaceCowboy, larguraLinhas: 0.25)
-
             
             
         case "Musk":
@@ -792,7 +791,6 @@ extension ViewController {
             
             // Altera a cor e largura da borda do teclado:
             colocaBordaEmTodosOsBotoesTecladoCalculo(corFundoMusk, larguraLinhas: 0.25)
-            
             
             
         case "Phantom":
@@ -976,7 +974,6 @@ extension ViewController {
             colocaBordaEmTodosOsBotoesTecladoCalculo(UIColor.blackColor(), larguraLinhas: 0.25)
             
             
-            
         case "Apple Classic":
             
             
@@ -1064,6 +1061,7 @@ extension ViewController {
             
             // Altera a cor e largura da borda do teclado:
             colocaBordaEmTodosOsBotoesTecladoCalculo(corFundoAppleClassic, larguraLinhas: 0.25)
+            
             
             
             
