@@ -211,6 +211,37 @@ func detectaTipoDeTela(tamanhoDaTela: CGRect) -> String {
 // Extensões GLOBAIS:
 // -------------------
 
+
+// Ligação com HistoricoCalculosViewController
+extension ViewController: DelegadoHistoricoCalculos {
+    
+    /**
+     
+     
+     
+     */
+    func comunicadorDeHistoricoDeCalculos(historico: String?, numeroDoBotao: Int?) {
+        
+        if historico == nil && numeroDoBotao == nil {
+            
+            historicoELinhasDoTempo = dicionarioHistoricoELinhasDoTempoInicial
+            armazenaHistoricoELinhasDoTempo(historicoELinhasDoTempo)
+            
+        } else {
+            
+            let linhasDoTempo = historicoELinhasDoTempo["Linhas do Tempo"] as! [[String]]
+            let historicoDeExpressoes = historicoELinhasDoTempo["Histórico"] as! [String]
+            linhaDoTempoDaExpressao = linhasDoTempo[historicoDeExpressoes.count - numeroDoBotao!]
+            outletLabelExpressaoMatematica.text = historico
+            mostraResultadoFinal()
+            verificaEAlteraStatusBotaoC()
+        }                        
+    }
+}
+
+
+
+
 // Ligação com TemaDeCoresViewController
 extension ViewController: DelegadoTemaDeCores {
     
@@ -263,36 +294,7 @@ extension ViewController: DelegadoMaisOpcoes {
     }
 }
 
-// Ligação com HistoricoViewController:
-extension ViewController: DelegadoHistorico {
-    
-    /**
-     
-     Comunica o histórico ou ação e o identificador do botão (Posição do botão).
-     
-     - Parâmetros: Historico ou ação e identificador do botão de histórico. (String, String?)
-     - Retorna: Nada.
-     
-     */
-    func comunicadorDeHistorico(historicoOuAção: String, identificadorDoBotaoHistorico: String?) {
-        
-        if historicoOuAção == "Limpar" {
-            
-            historicoELinhasDoTempo = dicionarioHistoricoELinhasDoTempoInicial
-            armazenaHistoricoELinhasDoTempo(historicoELinhasDoTempo)
-            
-        } else {
-            
-            let linhasDoTempo = historicoELinhasDoTempo["Linhas do Tempo"] as! [[String]]
-            let historicoDeExpressoes = historicoELinhasDoTempo["Histórico"] as! [String]
-            
-            linhaDoTempoDaExpressao = linhasDoTempo[historicoDeExpressoes.count - (Int(identificadorDoBotaoHistorico!)! + 1)]
-            outletLabelExpressaoMatematica.text = historicoOuAção
-            mostraResultadoFinal()
-            verificaEAlteraStatusBotaoC()                        
-        }
-    }
-}
+
 
 
 // ----------------------

@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF3216BC1C9E524F006C1C51 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3216BB1C9E524F006C1C51 /* NotificationCenter.framework */; };
 		EF41B6291C457AB9005129C3 /* Calculos.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41B6281C457AB9005129C3 /* Calculos.swift */; };
 		EF44B1BE1CACF426000BE346 /* AjudaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44B1BD1CACF426000BE346 /* AjudaViewController.swift */; };
 		EF469B971CD427D9001B0AA1 /* Idiomas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF469B961CD427D9001B0AA1 /* Idiomas.swift */; };
-		EF8C9ECC1C904FBB002279E6 /* HistoricoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C9ECB1C904FBB002279E6 /* HistoricoViewController.swift */; };
 		EF8D87621CB7CC8900C1AE26 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8D87611CB7CC8900C1AE26 /* Global.swift */; };
 		EF9211981C9451600090E55B /* Cores.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9211971C9451600090E55B /* Cores.swift */; };
+		EF9259791D1DCC9100C1613C /* HistoricoCalculosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9259781D1DCC9100C1613C /* HistoricoCalculosViewController.swift */; };
 		EFA0CABB1CA4EBFF0067CD37 /* TemaDeCoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA0CABA1CA4EBFF0067CD37 /* TemaDeCoresViewController.swift */; };
 		EFA23FA61CB40275003A81A7 /* MaisOpcoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA23FA51CB40275003A81A7 /* MaisOpcoesViewController.swift */; };
 		EFDE09D81C4378AD00CC9B00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE09D71C4378AD00CC9B00 /* AppDelegate.swift */; };
@@ -38,15 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EF3216B91C9E524F006C1C51 /* Widget da Calculadora.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Widget da Calculadora.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3216BB1C9E524F006C1C51 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		EF41B6281C457AB9005129C3 /* Calculos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculos.swift; sourceTree = "<group>"; };
 		EF42220F1CA604340068D5E6 /* Calculadora-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Calculadora-Swift.entitlements"; sourceTree = "<group>"; };
 		EF44B1BD1CACF426000BE346 /* AjudaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjudaViewController.swift; sourceTree = "<group>"; };
 		EF469B961CD427D9001B0AA1 /* Idiomas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idiomas.swift; sourceTree = "<group>"; };
-		EF8C9ECB1C904FBB002279E6 /* HistoricoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricoViewController.swift; sourceTree = "<group>"; };
 		EF8D87611CB7CC8900C1AE26 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = ../Global.swift; sourceTree = "<group>"; };
 		EF9211971C9451600090E55B /* Cores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cores.swift; path = ../Cores.swift; sourceTree = "<group>"; };
+		EF9259781D1DCC9100C1613C /* HistoricoCalculosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricoCalculosViewController.swift; sourceTree = "<group>"; };
 		EFA0CABA1CA4EBFF0067CD37 /* TemaDeCoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemaDeCoresViewController.swift; sourceTree = "<group>"; };
 		EFA23FA51CB40275003A81A7 /* MaisOpcoesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaisOpcoesViewController.swift; sourceTree = "<group>"; };
 		EFDE09D41C4378AD00CC9B00 /* Calculadora-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calculadora-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,14 +63,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EF3216B61C9E524F006C1C51 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EF3216BC1C9E524F006C1C51 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EFDE09D11C4378AD00CC9B00 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,7 +103,6 @@
 			children = (
 				EFDE09D41C4378AD00CC9B00 /* Calculadora-Swift.app */,
 				EFDE09E81C4378AD00CC9B00 /* Calculadora-SwiftTests.xctest */,
-				EF3216B91C9E524F006C1C51 /* Widget da Calculadora.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +112,7 @@
 			children = (
 				EF42220F1CA604340068D5E6 /* Calculadora-Swift.entitlements */,
 				EF8D87611CB7CC8900C1AE26 /* Global.swift */,
+				EF9259781D1DCC9100C1613C /* HistoricoCalculosViewController.swift */,
 				EF469B961CD427D9001B0AA1 /* Idiomas.swift */,
 				EFDE09D91C4378AD00CC9B00 /* ViewController.swift */,
 				EFE111481C4490B90091D5A0 /* VerificaECorrige.swift */,
@@ -135,7 +125,6 @@
 				EFDE09DE1C4378AD00CC9B00 /* Assets.xcassets */,
 				EFDE09E01C4378AD00CC9B00 /* LaunchScreen.storyboard */,
 				EFDE09E31C4378AD00CC9B00 /* Info.plist */,
-				EF8C9ECB1C904FBB002279E6 /* HistoricoViewController.swift */,
 				EFA0CABA1CA4EBFF0067CD37 /* TemaDeCoresViewController.swift */,
 				EF44B1BD1CACF426000BE346 /* AjudaViewController.swift */,
 				EFA23FA51CB40275003A81A7 /* MaisOpcoesViewController.swift */,
@@ -155,23 +144,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EF3216B81C9E524F006C1C51 /* Widget da Calculadora */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EF3216C91C9E524F006C1C51 /* Build configuration list for PBXNativeTarget "Widget da Calculadora" */;
-			buildPhases = (
-				EF3216B51C9E524F006C1C51 /* Sources */,
-				EF3216B61C9E524F006C1C51 /* Frameworks */,
-				EF3216B71C9E524F006C1C51 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Widget da Calculadora";
-			productName = "Widget da Calculadora";
-			productReference = EF3216B91C9E524F006C1C51 /* Widget da Calculadora.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		EFDE09D31C4378AD00CC9B00 /* Calculadora-Swift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFDE09F11C4378AD00CC9B00 /* Build configuration list for PBXNativeTarget "Calculadora-Swift" */;
@@ -217,15 +189,6 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = ThiagoMartins;
 				TargetAttributes = {
-					EF3216B81C9E524F006C1C51 = {
-						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 88J9TEV869;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
 					EFDE09D31C4378AD00CC9B00 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 88J9TEV869;
@@ -257,19 +220,11 @@
 			targets = (
 				EFDE09D31C4378AD00CC9B00 /* Calculadora-Swift */,
 				EFDE09E71C4378AD00CC9B00 /* Calculadora-SwiftTests */,
-				EF3216B81C9E524F006C1C51 /* Widget da Calculadora */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EF3216B71C9E524F006C1C51 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EFDE09D21C4378AD00CC9B00 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,22 +245,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EF3216B51C9E524F006C1C51 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EFDE09D01C4378AD00CC9B00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EFDE09DA1C4378AD00CC9B00 /* ViewController.swift in Sources */,
 				EFDE09D81C4378AD00CC9B00 /* AppDelegate.swift in Sources */,
-				EF8C9ECC1C904FBB002279E6 /* HistoricoViewController.swift in Sources */,
 				EFA23FA61CB40275003A81A7 /* MaisOpcoesViewController.swift in Sources */,
 				EF9211981C9451600090E55B /* Cores.swift in Sources */,
+				EF9259791D1DCC9100C1613C /* HistoricoCalculosViewController.swift in Sources */,
 				EFE111491C4490B90091D5A0 /* VerificaECorrige.swift in Sources */,
 				EFDE09F81C439C6400CC9B00 /* Tamanhos.swift in Sources */,
 				EF44B1BE1CACF426000BE346 /* AjudaViewController.swift in Sources */,
@@ -355,30 +303,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		EF3216C71C9E524F006C1C51 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Widget da Calculadora/Widget da Calculadora.entitlements";
-				INFOPLIST_FILE = "Widget da Calculadora/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ThiagoMartins.CalculadoraSwift.WidgetDaCalculadora;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		EF3216C81C9E524F006C1C51 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Widget da Calculadora/Widget da Calculadora.entitlements";
-				INFOPLIST_FILE = "Widget da Calculadora/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ThiagoMartins.CalculadoraSwift.WidgetDaCalculadora;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		EFDE09EF1C4378AD00CC9B00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -467,9 +391,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Calculadora-Swift/Calculadora-Swift.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Calculadora-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ThiagoMartins.CalculadoraSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ThiagoAndersonMartins.CalculadoraSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -479,9 +404,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Calculadora-Swift/Calculadora-Swift.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Calculadora-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ThiagoMartins.CalculadoraSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ThiagoAndersonMartins.CalculadoraSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -513,15 +439,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EF3216C91C9E524F006C1C51 /* Build configuration list for PBXNativeTarget "Widget da Calculadora" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EF3216C71C9E524F006C1C51 /* Debug */,
-				EF3216C81C9E524F006C1C51 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		EFDE09CF1C4378AD00CC9B00 /* Build configuration list for PBXProject "Calculadora-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

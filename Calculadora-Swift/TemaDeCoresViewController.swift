@@ -20,6 +20,10 @@ class TemaDeCoresViewController: UIViewController {
         super.viewDidLoad()
         aplicaIdiomaTemaDeCores(idioma)
         colocaBordaEmViewBotaoCorAtivo(temaDeCorSendoUsado)
+        
+        // Ajusta a posição do indicador de rolamento:
+        outletScrollViewCores.scrollIndicatorInsets = UIEdgeInsets(top: 45, left: 0, bottom: 0, right: 0)
+        
         outletConstraintAlturaConteudoSV.constant = calculaAlturaDeConteudoDoScrollViewTemaCores(9)
     }
     
@@ -40,6 +44,11 @@ class TemaDeCoresViewController: UIViewController {
     var temaDeCorSendoUsado: String = ""
     
     // Outlets:
+    
+        /// Scroll Views:
+        @IBOutlet var outletScrollViewCores: UIScrollView!
+    
+    
     @IBOutlet var outletLabelTituloMenuCores: UILabel!
     @IBOutlet var outletConstraintAlturaConteudoSV: NSLayoutConstraint!
     @IBOutlet var outletViewBotaoPhantom: UIView!
@@ -51,6 +60,7 @@ class TemaDeCoresViewController: UIViewController {
     @IBOutlet var outletViewBotaoRevolutionaryGirl: UIView!
     @IBOutlet var outletViewBotaoMinimalPaper: UIView!    
     @IBOutlet var outletViewBotaoSensai: UIView!
+    
     
     
     // ---------

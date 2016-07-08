@@ -22,6 +22,11 @@ class MaisOpcoesViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var configuracoesUsuario = [String:AnyObject]()
     
     // Outlets:
+    
+        /// Scroll Views:
+        @IBOutlet var outletScrollViewMaisOpcoes: UIScrollView!
+    
+    
     @IBOutlet var outletViewPrincipalMaisOpcoes: UIView!
     @IBOutlet var outletBotaoFechar: UIButton!
     @IBOutlet var outletBotaoRedefinirAjustes: UIButton!
@@ -67,8 +72,11 @@ class MaisOpcoesViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // Posiciona o idioma atual corretamente:
         posicionaPickerViewEmIdiomaSendoUsado()
         
-        // Altera a linguagem:
+        // Altera o idioma:
         aplicaIdiomaMaisOpcoes(idioma)
+        
+        // Ajusta a posição do indicador de rolamento:
+        outletScrollViewMaisOpcoes.scrollIndicatorInsets = UIEdgeInsets(top: 66, left: 0, bottom: 0, right: 0)
         
         // Altera a largura da tela de mais opções em alguma situações.
         mudaLarguraTelaMaisOpcoes()

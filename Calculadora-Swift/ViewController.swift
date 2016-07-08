@@ -124,7 +124,7 @@ class ViewController: UIViewController, UIApplicationDelegate, UIPopoverPresenta
     var linhaDoTempoDaExpressao: [String] = [""]
     
     // Quantidade máxima de históricos:
-    let QUANTIDADE_MAX_HISTORICO = 15
+    let QUANTIDADE_MAX_HISTORICO = 1024
     
     // Detector de toque para Memória:
     let detectorDeToqueMemoria = UITapGestureRecognizer()
@@ -176,6 +176,7 @@ class ViewController: UIViewController, UIApplicationDelegate, UIPopoverPresenta
     @IBOutlet var botaoConfig: UIButton!
     @IBOutlet var botaoHistorico: UIButton!
     
+    @IBOutlet var outletBotaoHistorico: UIButton!
     @IBOutlet var outletBotaoVoltarMenuOpcoes: UIButton!
     @IBOutlet var outletBotaoCoresMenuOpcoes: UIButton!
     @IBOutlet var outletBotaoAjudaMenuOpcoes: UIButton!
@@ -581,17 +582,11 @@ class ViewController: UIViewController, UIApplicationDelegate, UIPopoverPresenta
     }
     
     
-    /**
-     
-     Aciona o Segue do botão de Historico com o HistoricoViewController.
-     
-     - Parâmetros: sender.
-     - Retorna: Nada.
-     
-    */
-    @IBAction func historicoToque(sender: AnyObject) {
-        self.performSegueWithIdentifier("mostraViewHistorico", sender: self)
+                
+    @IBAction func acaoBotaoHistorico(sender: AnyObject) {
+        self.performSegueWithIdentifier("segueMostraHistorico", sender: self)
     }
+    
     
     
     /**
@@ -629,29 +624,29 @@ class ViewController: UIViewController, UIApplicationDelegate, UIPopoverPresenta
      
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "mostraViewHistorico" {
+                        
+        if segue.identifier == "segueMostraHistorico" {
             
             // Permite a troca de dados por Segue:
-            (segue.destinationViewController as! HistoricoViewController).delegate = self
+            (segue.destinationViewController as! HistoricoCalculosViewController).delegadoHistoricoCalculos = self
             
             // Cria um objeto segue que dá acesso ao HistoricoViewController:
-            let historicoVC = segue.destinationViewController as! HistoricoViewController
+            let historicoCalculosVC = segue.destinationViewController as! HistoricoCalculosViewController
             
             // Envia dados do histórico aqui:
-            historicoVC.historicoDeCalculosDoViewController = historicoELinhasDoTempo["Histórico"] as! [String]
-            //historicoVC.historicoDeCalculosDoViewController = historicoDeCalculos
+            historicoCalculosVC.historicoDeCalculos = historicoELinhasDoTempo["Histórico"] as! [String]
             
             // Arruma a posição da seta para o centro do botão:
-            historicoVC.popoverPresentationController?.sourceRect = botaoHistorico.bounds
+            historicoCalculosVC.popoverPresentationController?.sourceRect = outletBotaoHistorico.bounds
             
             // Permite apenas a seta para cima:
-            historicoVC.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.Up
+            historicoCalculosVC.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.Up
             
             // Faz com que PopOvers sejam apresentados em iPhones da mesma forma que são em iPads [1/2]:
-            if historicoVC.popoverPresentationController != nil {
-                historicoVC.popoverPresentationController?.delegate = self
+            if historicoCalculosVC.popoverPresentationController != nil {
+                historicoCalculosVC.popoverPresentationController?.delegate = self
             }
+            
             
         } else if segue.identifier == "segueMostraTemaDeCores" {
             

@@ -122,13 +122,15 @@
                                                             <constraint firstAttribute="bottom" secondItem="503-UD-Z3s" secondAttribute="bottom" id="yGk-h5-AmV"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HM-3q-071">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uh2-Xr-WHB">
                                                         <rect key="frame" x="300" y="0.0" width="300" height="80"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <state key="normal" title="ⓗ"/>
+                                                        <state key="normal" title="ⓗ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
-                                                            <action selector="historicoToque:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4aV-tO-oMV"/>
+                                                            <segue destination="fml-vK-DNn" kind="popoverPresentation" identifier="segueMostraHistorico" popoverAnchorView="Uh2-Xr-WHB" id="5U6-Rl-aHo">
+                                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                            </segue>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -993,7 +995,7 @@
                         <outlet property="atanOutlet" destination="4WZ-Qr-pvE" id="zWq-GC-8zq"/>
                         <outlet property="atanhOutlet" destination="uvR-s5-pBz" id="bw7-wW-Lbb"/>
                         <outlet property="botaoConfig" destination="MDS-24-ogA" id="r42-s7-C6C"/>
-                        <outlet property="botaoHistorico" destination="4HM-3q-071" id="pDI-Sp-oBi"/>
+                        <outlet property="botaoHistorico" destination="Uh2-Xr-WHB" id="gai-ev-JHH"/>
                         <outlet property="cOutlet" destination="IHO-bk-N8k" id="Y5b-fV-Ota"/>
                         <outlet property="cincoOutlet" destination="IkW-FA-YYZ" id="nEK-yD-XS9"/>
                         <outlet property="cosOutlet" destination="SXU-vu-421" id="G1y-qp-8aV"/>
@@ -1030,6 +1032,7 @@
                         <outlet property="outletBotaoEHorizontal" destination="tEd-af-ZU6" id="iwQ-1E-whC"/>
                         <outlet property="outletBotaoGoldenRatio" destination="br7-89-yEs" id="F9t-wf-Zcp"/>
                         <outlet property="outletBotaoGoldenRatioHorizontal" destination="qJ8-7j-Xe4" id="hFq-BF-vm2"/>
+                        <outlet property="outletBotaoHistorico" destination="Uh2-Xr-WHB" id="sFm-xj-HAk"/>
                         <outlet property="outletBotaoLogHorizontal" destination="hYb-bL-cUz" id="d8m-ik-2lu"/>
                         <outlet property="outletBotaoMMais" destination="9IW-lN-jc2" id="odV-cR-DVl"/>
                         <outlet property="outletBotaoMMenos" destination="g9v-ef-UZb" id="vIl-D5-V78"/>
@@ -1092,9 +1095,6 @@
                         <outlet property="viewPrincipalStack" destination="47O-SY-2Lb" id="s9c-vD-DD8"/>
                         <outlet property="xRootOutlet" destination="bBQ-MP-FZE" id="bW1-yb-6Ta"/>
                         <outlet property="zeroOutlet" destination="3Po-aE-gWx" id="LpT-MN-u0Y"/>
-                        <segue destination="ZhR-3q-vXm" kind="popoverPresentation" identifier="mostraViewHistorico" popoverAnchorView="4HM-3q-071" id="1FN-89-ufU">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
                         <segue destination="QZn-xY-is3" kind="popoverPresentation" identifier="segueMostraTemaDeCores" popoverAnchorView="7zl-z6-DoB" id="i70-0e-ayX">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
@@ -1108,753 +1108,140 @@
             </objects>
             <point key="canvasLocation" x="421" y="531"/>
         </scene>
-        <!--Historico View Controller-->
-        <scene sceneID="bMl-YD-Wuz">
+        <!--Historico Calculos View Controller-->
+        <scene sceneID="BS6-9b-E86">
             <objects>
-                <viewController storyboardIdentifier="historicoViewController" id="ZhR-3q-vXm" customClass="HistoricoViewController" customModule="Calculadora_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fml-vK-DNn" customClass="HistoricoCalculosViewController" customModule="Calculadora_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3Ww-BF-mUY"/>
-                        <viewControllerLayoutGuide type="bottom" id="B0D-CZ-ZW8"/>
+                        <viewControllerLayoutGuide type="top" id="esu-YE-dZa"/>
+                        <viewControllerLayoutGuide type="bottom" id="C06-D5-BgW"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qC0-40-5fo">
+                    <view key="view" contentMode="scaleToFill" id="ZwC-ed-TEl">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUi-FS-dxH" userLabel="View Pai do ScrollView">
-                                <rect key="frame" x="0.0" y="0.0" width="335" height="250"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLW-VB-NhX" userLabel="View Pai do ScrollView">
+                                <rect key="frame" x="0.0" y="20" width="335" height="230"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMk-e1-mj8">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="250"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nG-do-9z3">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="230"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f66-dZ-kXd" userLabel="Conteudo do SV">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="1292"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itQ-lc-ECX" userLabel="Historico 1">
-                                                        <rect key="frame" x="0.0" y="46" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="0" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMR-iV-UOi">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="Z2v-nr-wRt"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="eMR-iV-UOi" secondAttribute="trailing" constant="8" id="0xe-LA-KQW"/>
-                                                            <constraint firstItem="eMR-iV-UOi" firstAttribute="top" secondItem="itQ-lc-ECX" secondAttribute="top" id="6r3-aW-OUa"/>
-                                                            <constraint firstItem="eMR-iV-UOi" firstAttribute="leading" secondItem="itQ-lc-ECX" secondAttribute="leading" constant="8" id="SmO-yX-Bly"/>
-                                                            <constraint firstAttribute="trailing" secondItem="eMR-iV-UOi" secondAttribute="trailing" constant="8" id="TQ8-PH-LpC"/>
-                                                            <constraint firstAttribute="bottom" secondItem="eMR-iV-UOi" secondAttribute="bottom" id="e2c-ob-7aQ"/>
-                                                            <constraint firstAttribute="bottom" secondItem="eMR-iV-UOi" secondAttribute="bottom" id="g2H-co-bB1"/>
-                                                            <constraint firstAttribute="height" constant="56" id="nI2-gV-pPf"/>
-                                                            <constraint firstItem="eMR-iV-UOi" firstAttribute="leading" secondItem="itQ-lc-ECX" secondAttribute="leading" constant="8" id="tz3-CK-MNz"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="0xe-LA-KQW"/>
-                                                                <exclude reference="SmO-yX-Bly"/>
-                                                                <exclude reference="g2H-co-bB1"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arD-zV-8tB" userLabel="Historico 2">
-                                                        <rect key="frame" x="0.0" y="103" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9y8-N3-A57">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="xEq-DE-XdC"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="56" id="2Bo-mI-6DF"/>
-                                                            <constraint firstItem="9y8-N3-A57" firstAttribute="top" secondItem="arD-zV-8tB" secondAttribute="top" id="JCY-D5-o9f"/>
-                                                            <constraint firstAttribute="trailing" secondItem="9y8-N3-A57" secondAttribute="trailing" constant="8" id="JEA-gS-Y1u"/>
-                                                            <constraint firstAttribute="bottom" secondItem="9y8-N3-A57" secondAttribute="bottom" id="VPg-w0-fIi"/>
-                                                            <constraint firstItem="9y8-N3-A57" firstAttribute="leading" secondItem="arD-zV-8tB" secondAttribute="leading" constant="8" id="Xun-xm-Pba"/>
-                                                            <constraint firstAttribute="trailing" secondItem="9y8-N3-A57" secondAttribute="trailing" constant="8" id="hrr-Xm-W7D"/>
-                                                            <constraint firstItem="9y8-N3-A57" firstAttribute="leading" secondItem="arD-zV-8tB" secondAttribute="leading" constant="8" id="mql-60-737"/>
-                                                            <constraint firstAttribute="bottom" secondItem="9y8-N3-A57" secondAttribute="bottom" id="uuF-xv-Q8U"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="JEA-gS-Y1u"/>
-                                                                <exclude reference="mql-60-737"/>
-                                                                <exclude reference="uuF-xv-Q8U"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrq-OS-OxD" userLabel="Historico 3">
-                                                        <rect key="frame" x="0.0" y="160" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nL9-Mp-4IM">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="Iyc-yR-iWo"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="Iyc-yR-iWo"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="eEn-od-oHD"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="56" id="AD3-9z-035"/>
-                                                            <constraint firstItem="nL9-Mp-4IM" firstAttribute="top" secondItem="Zrq-OS-OxD" secondAttribute="top" id="GVw-vx-mco"/>
-                                                            <constraint firstItem="nL9-Mp-4IM" firstAttribute="leading" secondItem="Zrq-OS-OxD" secondAttribute="leading" constant="8" id="Oeb-dG-mEG"/>
-                                                            <constraint firstAttribute="bottom" secondItem="nL9-Mp-4IM" secondAttribute="bottom" id="Qul-jt-aRd"/>
-                                                            <constraint firstAttribute="trailing" secondItem="nL9-Mp-4IM" secondAttribute="trailing" constant="8" id="p48-Ck-izN"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-fY-8Ny" userLabel="Historico 4">
-                                                        <rect key="frame" x="0.0" y="217" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysh-m0-2W2">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="OHx-ph-OOC"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="OHx-ph-OOC"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="Jxd-yd-hlc"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="56" id="26t-Rn-Vnw"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Ysh-m0-2W2" secondAttribute="bottom" id="54A-3m-3qD"/>
-                                                            <constraint firstItem="Ysh-m0-2W2" firstAttribute="top" secondItem="Q1g-fY-8Ny" secondAttribute="top" id="BMX-VB-ZMC"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Ysh-m0-2W2" secondAttribute="trailing" constant="8" id="FOp-og-EB8"/>
-                                                            <constraint firstItem="Ysh-m0-2W2" firstAttribute="leading" secondItem="Q1g-fY-8Ny" secondAttribute="leading" constant="8" id="a7r-pN-QdI"/>
-                                                            <constraint firstItem="Ysh-m0-2W2" firstAttribute="top" secondItem="Q1g-fY-8Ny" secondAttribute="top" id="c2I-cR-5Oq"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Ysh-m0-2W2" secondAttribute="trailing" constant="8" id="dYu-ce-8x5"/>
-                                                            <constraint firstItem="Ysh-m0-2W2" firstAttribute="top" secondItem="Q1g-fY-8Ny" secondAttribute="top" id="ecK-pU-HWT"/>
-                                                            <constraint firstItem="Ysh-m0-2W2" firstAttribute="leading" secondItem="Q1g-fY-8Ny" secondAttribute="leading" constant="8" id="en2-qT-Hpt"/>
-                                                            <constraint firstItem="Ysh-m0-2W2" firstAttribute="leading" secondItem="Q1g-fY-8Ny" secondAttribute="leading" constant="8" id="pdU-v1-JLL"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Ysh-m0-2W2" secondAttribute="trailing" constant="8" id="tKY-LL-NRY"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Ysh-m0-2W2" secondAttribute="bottom" id="tva-9P-ICe"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="c2I-cR-5Oq"/>
-                                                                <exclude reference="en2-qT-Hpt"/>
-                                                                <exclude reference="tKY-LL-NRY"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXt-oL-FIK" userLabel="Historico 5">
-                                                        <rect key="frame" x="0.0" y="274" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5i-la-LTN">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="EGh-ho-cYN"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="EGh-ho-cYN"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="1Eq-xS-MqM"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="56" id="6KE-zz-652"/>
-                                                            <constraint firstItem="S5i-la-LTN" firstAttribute="top" secondItem="ZXt-oL-FIK" secondAttribute="top" id="74a-F4-Rb4"/>
-                                                            <constraint firstItem="S5i-la-LTN" firstAttribute="leading" secondItem="ZXt-oL-FIK" secondAttribute="leading" constant="8" id="Fof-PK-Ida"/>
-                                                            <constraint firstItem="S5i-la-LTN" firstAttribute="leading" secondItem="ZXt-oL-FIK" secondAttribute="leading" constant="8" id="KEn-mf-RY4"/>
-                                                            <constraint firstAttribute="trailing" secondItem="S5i-la-LTN" secondAttribute="trailing" constant="8" id="bRU-Xa-yeb"/>
-                                                            <constraint firstAttribute="trailing" secondItem="S5i-la-LTN" secondAttribute="trailing" constant="8" id="hVe-ML-Qy4"/>
-                                                            <constraint firstAttribute="bottom" secondItem="S5i-la-LTN" secondAttribute="bottom" id="j3O-aM-Jn7"/>
-                                                            <constraint firstItem="S5i-la-LTN" firstAttribute="top" secondItem="ZXt-oL-FIK" secondAttribute="top" id="ktz-ie-LHo"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="74a-F4-Rb4"/>
-                                                                <exclude reference="Fof-PK-Ida"/>
-                                                                <exclude reference="hVe-ML-Qy4"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFS-JE-l31" userLabel="Historico 6">
-                                                        <rect key="frame" x="0.0" y="331" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqK-F3-P2Q">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="liv-j8-IrS"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="liv-j8-IrS"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="vCQ-sn-BUX"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="fqK-F3-P2Q" secondAttribute="bottom" id="5Eu-qG-oKH"/>
-                                                            <constraint firstItem="fqK-F3-P2Q" firstAttribute="leading" secondItem="wFS-JE-l31" secondAttribute="leading" constant="8" id="M68-9o-ATA"/>
-                                                            <constraint firstAttribute="trailing" secondItem="fqK-F3-P2Q" secondAttribute="trailing" constant="8" id="Psl-qz-bbn"/>
-                                                            <constraint firstItem="fqK-F3-P2Q" firstAttribute="leading" secondItem="wFS-JE-l31" secondAttribute="leading" constant="8" id="cYE-AJ-356"/>
-                                                            <constraint firstItem="fqK-F3-P2Q" firstAttribute="top" secondItem="wFS-JE-l31" secondAttribute="top" id="iln-P7-uZd"/>
-                                                            <constraint firstItem="fqK-F3-P2Q" firstAttribute="top" secondItem="wFS-JE-l31" secondAttribute="top" id="lPk-66-DTv"/>
-                                                            <constraint firstAttribute="height" constant="56" id="mTg-FE-gch"/>
-                                                            <constraint firstAttribute="trailing" secondItem="fqK-F3-P2Q" secondAttribute="trailing" constant="8" id="sby-ek-CEH"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="M68-9o-ATA"/>
-                                                                <exclude reference="lPk-66-DTv"/>
-                                                                <exclude reference="sby-ek-CEH"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qn2-rJ-RGN" userLabel="Historico 7">
-                                                        <rect key="frame" x="0.0" y="388" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="6" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFS-Ly-8zt">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="sOi-WO-PuL"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="sOi-WO-PuL"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="vnd-Tr-yeS"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="qFS-Ly-8zt" secondAttribute="trailing" constant="8" id="7eA-9J-naO"/>
-                                                            <constraint firstItem="qFS-Ly-8zt" firstAttribute="top" secondItem="Qn2-rJ-RGN" secondAttribute="top" id="Dck-4p-Vk8"/>
-                                                            <constraint firstItem="qFS-Ly-8zt" firstAttribute="leading" secondItem="Qn2-rJ-RGN" secondAttribute="leading" constant="8" id="Gal-dG-CSo"/>
-                                                            <constraint firstItem="qFS-Ly-8zt" firstAttribute="leading" secondItem="Qn2-rJ-RGN" secondAttribute="leading" constant="8" id="GoL-XI-vPO"/>
-                                                            <constraint firstAttribute="bottom" secondItem="qFS-Ly-8zt" secondAttribute="bottom" id="fmJ-M4-3JO"/>
-                                                            <constraint firstItem="qFS-Ly-8zt" firstAttribute="top" secondItem="Qn2-rJ-RGN" secondAttribute="top" id="gyO-ho-BYD"/>
-                                                            <constraint firstAttribute="height" constant="56" id="oPT-Ew-7Wo"/>
-                                                            <constraint firstAttribute="trailing" secondItem="qFS-Ly-8zt" secondAttribute="trailing" constant="8" id="pBW-Vr-Tdl"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="Gal-dG-CSo"/>
-                                                                <exclude reference="gyO-ho-BYD"/>
-                                                                <exclude reference="pBW-Vr-Tdl"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWY-Hc-Fin" userLabel="Historico 8">
-                                                        <rect key="frame" x="0.0" y="445" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="7" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckJ-JZ-TQE">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="3fJ-ZD-vw4"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="3fJ-ZD-vw4"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="Xnm-5A-9MN"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="56" id="2td-jS-DLU"/>
-                                                            <constraint firstItem="ckJ-JZ-TQE" firstAttribute="top" secondItem="oWY-Hc-Fin" secondAttribute="top" id="4RC-xC-eaH"/>
-                                                            <constraint firstAttribute="trailing" secondItem="ckJ-JZ-TQE" secondAttribute="trailing" constant="8" id="4zU-SO-jOL"/>
-                                                            <constraint firstAttribute="bottom" secondItem="ckJ-JZ-TQE" secondAttribute="bottom" id="EsY-mx-WKP"/>
-                                                            <constraint firstItem="ckJ-JZ-TQE" firstAttribute="top" secondItem="oWY-Hc-Fin" secondAttribute="top" id="enP-Rs-WKz"/>
-                                                            <constraint firstAttribute="trailing" secondItem="ckJ-JZ-TQE" secondAttribute="trailing" constant="8" id="gbL-9t-gzd"/>
-                                                            <constraint firstItem="ckJ-JZ-TQE" firstAttribute="leading" secondItem="oWY-Hc-Fin" secondAttribute="leading" constant="8" id="msI-YX-vNa"/>
-                                                            <constraint firstItem="ckJ-JZ-TQE" firstAttribute="leading" secondItem="oWY-Hc-Fin" secondAttribute="leading" constant="8" id="oaZ-MF-3Xk"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="4RC-xC-eaH"/>
-                                                                <exclude reference="4zU-SO-jOL"/>
-                                                                <exclude reference="oaZ-MF-3Xk"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rh6-QK-L4t" userLabel="Historico 9">
-                                                        <rect key="frame" x="0.0" y="502" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="8" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiS-KA-1Ui">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="MvP-2d-fHX"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="MvP-2d-fHX"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="eLx-22-ewN"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="PiS-KA-1Ui" firstAttribute="leading" secondItem="Rh6-QK-L4t" secondAttribute="leading" constant="8" id="7LX-7f-Zp8"/>
-                                                            <constraint firstAttribute="trailing" secondItem="PiS-KA-1Ui" secondAttribute="trailing" constant="8" id="EMY-l4-W1R"/>
-                                                            <constraint firstAttribute="bottom" secondItem="PiS-KA-1Ui" secondAttribute="bottom" id="OLe-8U-44E"/>
-                                                            <constraint firstAttribute="height" constant="56" id="afh-F3-jao"/>
-                                                            <constraint firstItem="PiS-KA-1Ui" firstAttribute="top" secondItem="Rh6-QK-L4t" secondAttribute="top" id="ePU-ii-Wt2"/>
-                                                            <constraint firstItem="PiS-KA-1Ui" firstAttribute="leading" secondItem="Rh6-QK-L4t" secondAttribute="leading" constant="8" id="nMw-fW-kcL"/>
-                                                            <constraint firstItem="PiS-KA-1Ui" firstAttribute="top" secondItem="Rh6-QK-L4t" secondAttribute="top" id="oBy-8H-gEj"/>
-                                                            <constraint firstAttribute="trailing" secondItem="PiS-KA-1Ui" secondAttribute="trailing" constant="8" id="pdN-sB-Zgv"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="ePU-ii-Wt2"/>
-                                                                <exclude reference="nMw-fW-kcL"/>
-                                                                <exclude reference="pdN-sB-Zgv"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbM-oF-gyO" userLabel="Historico 10">
-                                                        <rect key="frame" x="0.0" y="559" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="9" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Znw-La-Idy">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="we1-iU-rbB"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="we1-iU-rbB"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="c7Q-18-3HP"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="Znw-La-Idy" firstAttribute="leading" secondItem="jbM-oF-gyO" secondAttribute="leading" constant="8" id="0ep-0R-D0a"/>
-                                                            <constraint firstItem="Znw-La-Idy" firstAttribute="top" secondItem="jbM-oF-gyO" secondAttribute="top" id="2hY-k3-cyX"/>
-                                                            <constraint firstAttribute="height" constant="56" id="4K4-3t-7Qa"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Znw-La-Idy" secondAttribute="trailing" constant="8" id="B0Z-tO-20a"/>
-                                                            <constraint firstItem="Znw-La-Idy" firstAttribute="top" secondItem="jbM-oF-gyO" secondAttribute="top" id="iKH-MB-Ar6"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Znw-La-Idy" secondAttribute="trailing" constant="8" id="tkc-34-l1P"/>
-                                                            <constraint firstItem="Znw-La-Idy" firstAttribute="leading" secondItem="jbM-oF-gyO" secondAttribute="leading" constant="8" id="v3A-aU-kC3"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Znw-La-Idy" secondAttribute="bottom" id="wdo-LB-lVO"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="0ep-0R-D0a"/>
-                                                                <exclude reference="2hY-k3-cyX"/>
-                                                                <exclude reference="B0Z-tO-20a"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wu4-EC-YIN" userLabel="Historico 11">
-                                                        <rect key="frame" x="0.0" y="616" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="10" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XW2-ba-QiR">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="sGq-FF-MAj"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="sGq-FF-MAj"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="P80-Ii-VRR"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="56" id="445-fc-vcM"/>
-                                                            <constraint firstAttribute="trailing" secondItem="XW2-ba-QiR" secondAttribute="trailing" constant="8" id="4TW-jM-GrE"/>
-                                                            <constraint firstItem="XW2-ba-QiR" firstAttribute="top" secondItem="Wu4-EC-YIN" secondAttribute="top" id="FBQ-ZN-CXJ"/>
-                                                            <constraint firstItem="XW2-ba-QiR" firstAttribute="top" secondItem="Wu4-EC-YIN" secondAttribute="top" id="FvJ-oC-CU8"/>
-                                                            <constraint firstAttribute="trailing" secondItem="XW2-ba-QiR" secondAttribute="trailing" constant="8" id="V3e-ur-oiq"/>
-                                                            <constraint firstItem="XW2-ba-QiR" firstAttribute="leading" secondItem="Wu4-EC-YIN" secondAttribute="leading" constant="8" id="kqg-9J-PJY"/>
-                                                            <constraint firstItem="XW2-ba-QiR" firstAttribute="leading" secondItem="Wu4-EC-YIN" secondAttribute="leading" constant="8" id="qJV-VH-Zv8"/>
-                                                            <constraint firstAttribute="bottom" secondItem="XW2-ba-QiR" secondAttribute="bottom" id="vnd-Od-Hcg"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="4TW-jM-GrE"/>
-                                                                <exclude reference="FBQ-ZN-CXJ"/>
-                                                                <exclude reference="kqg-9J-PJY"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0h6-bX-skI" userLabel="Historico 12">
-                                                        <rect key="frame" x="0.0" y="673" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="11" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaW-1B-t9o">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="hQu-tY-d99"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="hQu-tY-d99"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="z1f-r1-kf7"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="TaW-1B-t9o" secondAttribute="trailing" constant="8" id="3Vi-qS-unR"/>
-                                                            <constraint firstItem="TaW-1B-t9o" firstAttribute="leading" secondItem="0h6-bX-skI" secondAttribute="leading" constant="8" id="9se-UM-Ir7"/>
-                                                            <constraint firstItem="TaW-1B-t9o" firstAttribute="top" secondItem="0h6-bX-skI" secondAttribute="top" id="E2y-fS-sID"/>
-                                                            <constraint firstAttribute="trailing" secondItem="TaW-1B-t9o" secondAttribute="trailing" constant="8" id="JRz-zm-bHt"/>
-                                                            <constraint firstItem="TaW-1B-t9o" firstAttribute="leading" secondItem="0h6-bX-skI" secondAttribute="leading" constant="8" id="OQa-k3-W2D"/>
-                                                            <constraint firstAttribute="height" constant="56" id="R1U-Ox-0fY"/>
-                                                            <constraint firstAttribute="bottom" secondItem="TaW-1B-t9o" secondAttribute="bottom" id="Zgx-bb-rIU"/>
-                                                            <constraint firstItem="TaW-1B-t9o" firstAttribute="top" secondItem="0h6-bX-skI" secondAttribute="top" id="yyp-tt-pxq"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="3Vi-qS-unR"/>
-                                                                <exclude reference="9se-UM-Ir7"/>
-                                                                <exclude reference="E2y-fS-sID"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GB2-Ra-5ct" userLabel="Historico 13">
-                                                        <rect key="frame" x="0.0" y="730" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="12" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5Y-28-cbH">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="UCS-nj-8ip"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="UCS-nj-8ip"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="gwH-fV-iYe"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="I5Y-28-cbH" secondAttribute="bottom" id="8tA-fr-5MU"/>
-                                                            <constraint firstAttribute="trailing" secondItem="I5Y-28-cbH" secondAttribute="trailing" constant="8" id="By4-m6-gUa"/>
-                                                            <constraint firstAttribute="height" constant="56" id="MtV-WA-csB"/>
-                                                            <constraint firstItem="I5Y-28-cbH" firstAttribute="leading" secondItem="GB2-Ra-5ct" secondAttribute="leading" constant="8" id="Sic-zo-Uy3"/>
-                                                            <constraint firstItem="I5Y-28-cbH" firstAttribute="leading" secondItem="GB2-Ra-5ct" secondAttribute="leading" constant="8" id="Yuq-EM-GjH"/>
-                                                            <constraint firstItem="I5Y-28-cbH" firstAttribute="top" secondItem="GB2-Ra-5ct" secondAttribute="top" id="lKu-1s-SGM"/>
-                                                            <constraint firstAttribute="trailing" secondItem="I5Y-28-cbH" secondAttribute="trailing" constant="8" id="ogb-mW-6QV"/>
-                                                            <constraint firstItem="I5Y-28-cbH" firstAttribute="top" secondItem="GB2-Ra-5ct" secondAttribute="top" id="wgu-ub-3NG"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="By4-m6-gUa"/>
-                                                                <exclude reference="Sic-zo-Uy3"/>
-                                                                <exclude reference="wgu-ub-3NG"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOH-qy-avE" userLabel="Historico 14">
-                                                        <rect key="frame" x="0.0" y="787" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="13" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ME-3H-N6L">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="nsE-h7-UCg"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="nsE-h7-UCg"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="bPK-XS-Mfe"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="1ME-3H-N6L" firstAttribute="top" secondItem="yOH-qy-avE" secondAttribute="top" id="3Xn-LW-syG"/>
-                                                            <constraint firstAttribute="height" constant="56" id="7Ld-c6-dra"/>
-                                                            <constraint firstAttribute="bottom" secondItem="1ME-3H-N6L" secondAttribute="bottom" id="KOz-Eu-axw"/>
-                                                            <constraint firstItem="1ME-3H-N6L" firstAttribute="leading" secondItem="yOH-qy-avE" secondAttribute="leading" constant="8" id="axg-RN-dZF"/>
-                                                            <constraint firstItem="1ME-3H-N6L" firstAttribute="top" secondItem="yOH-qy-avE" secondAttribute="top" id="bZZ-qD-m0F"/>
-                                                            <constraint firstAttribute="trailing" secondItem="1ME-3H-N6L" secondAttribute="trailing" constant="8" id="gbf-in-C0P"/>
-                                                            <constraint firstItem="1ME-3H-N6L" firstAttribute="leading" secondItem="yOH-qy-avE" secondAttribute="leading" constant="8" id="iuQ-C2-xmr"/>
-                                                            <constraint firstAttribute="trailing" secondItem="1ME-3H-N6L" secondAttribute="trailing" constant="8" id="kWz-KV-2lA"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="3Xn-LW-syG"/>
-                                                                <exclude reference="gbf-in-C0P"/>
-                                                                <exclude reference="iuQ-C2-xmr"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q15-aJ-w9V" userLabel="Historico 15">
-                                                        <rect key="frame" x="0.0" y="844" width="335" height="56"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="14" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUh-jC-isI">
-                                                                <rect key="frame" x="8" y="0.0" width="319" height="56"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="bfg-tN-bX5"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                                <state key="normal" title="?"/>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="bfg-tN-bX5"/>
-                                                                    </mask>
-                                                                </variation>
-                                                                <connections>
-                                                                    <action selector="acaoToqueEmAlgumHistorico:" destination="ZhR-3q-vXm" eventType="touchUpInside" id="FBA-Lf-C3R"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="IUh-jC-isI" firstAttribute="top" secondItem="q15-aJ-w9V" secondAttribute="top" id="3kJ-jt-VSU"/>
-                                                            <constraint firstAttribute="trailing" secondItem="IUh-jC-isI" secondAttribute="trailing" constant="8" id="4jT-2y-ifx"/>
-                                                            <constraint firstItem="IUh-jC-isI" firstAttribute="leading" secondItem="q15-aJ-w9V" secondAttribute="leading" constant="8" id="7bG-DB-d1l"/>
-                                                            <constraint firstAttribute="trailing" secondItem="IUh-jC-isI" secondAttribute="trailing" constant="8" id="CkK-bQ-k3k"/>
-                                                            <constraint firstAttribute="height" constant="56" id="O1V-wj-u0C"/>
-                                                            <constraint firstAttribute="bottom" secondItem="IUh-jC-isI" secondAttribute="bottom" id="eTL-aH-0kC"/>
-                                                            <constraint firstItem="IUh-jC-isI" firstAttribute="leading" secondItem="q15-aJ-w9V" secondAttribute="leading" constant="8" id="gMV-gu-qdH"/>
-                                                            <constraint firstItem="IUh-jC-isI" firstAttribute="top" secondItem="q15-aJ-w9V" secondAttribute="top" id="yKO-Iw-uxd"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="3kJ-jt-VSU"/>
-                                                                <exclude reference="7bG-DB-d1l"/>
-                                                                <exclude reference="CkK-bQ-k3k"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                </subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjz-Kr-2nz">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="250"/>
                                                 <constraints>
-                                                    <constraint firstItem="Wu4-EC-YIN" firstAttribute="top" secondItem="jbM-oF-gyO" secondAttribute="bottom" constant="1" id="0tJ-y3-4su"/>
-                                                    <constraint firstItem="jbM-oF-gyO" firstAttribute="top" secondItem="Rh6-QK-L4t" secondAttribute="bottom" constant="1" id="1hr-de-7hD"/>
-                                                    <constraint firstItem="GB2-Ra-5ct" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="1mU-Sc-oVO"/>
-                                                    <constraint firstItem="ZXt-oL-FIK" firstAttribute="top" secondItem="Q1g-fY-8Ny" secondAttribute="bottom" constant="1" id="2vm-hn-JoS"/>
-                                                    <constraint firstItem="q15-aJ-w9V" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="3Am-cA-AY1"/>
-                                                    <constraint firstAttribute="trailing" secondItem="jbM-oF-gyO" secondAttribute="trailing" id="3Pn-Tr-8du"/>
-                                                    <constraint firstItem="Wu4-EC-YIN" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="6ca-Hk-f0P"/>
-                                                    <constraint firstItem="yOH-qy-avE" firstAttribute="top" secondItem="GB2-Ra-5ct" secondAttribute="bottom" constant="1" id="6vR-bV-hoC"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Wu4-EC-YIN" secondAttribute="trailing" id="79Y-Dm-Wb8"/>
-                                                    <constraint firstAttribute="height" constant="1292" id="ARn-4y-rV9"/>
-                                                    <constraint firstItem="Zrq-OS-OxD" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="BU9-qX-Ich"/>
-                                                    <constraint firstAttribute="trailing" secondItem="wFS-JE-l31" secondAttribute="trailing" id="FcY-a0-W4Y"/>
-                                                    <constraint firstItem="arD-zV-8tB" firstAttribute="top" secondItem="itQ-lc-ECX" secondAttribute="bottom" constant="1" id="GGf-BS-RSQ"/>
-                                                    <constraint firstItem="0h6-bX-skI" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="JwN-uH-GV3"/>
-                                                    <constraint firstItem="Zrq-OS-OxD" firstAttribute="top" secondItem="arD-zV-8tB" secondAttribute="bottom" constant="1" id="Kli-Xo-P1y"/>
-                                                    <constraint firstItem="Rh6-QK-L4t" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="M7w-vo-Aoq"/>
-                                                    <constraint firstAttribute="trailing" secondItem="yOH-qy-avE" secondAttribute="trailing" id="Ok3-2r-NRe"/>
-                                                    <constraint firstItem="Q1g-fY-8Ny" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="P9p-Ab-uNj"/>
-                                                    <constraint firstItem="q15-aJ-w9V" firstAttribute="top" secondItem="yOH-qy-avE" secondAttribute="bottom" constant="1" id="PmO-nA-V3t"/>
-                                                    <constraint firstItem="GB2-Ra-5ct" firstAttribute="top" secondItem="0h6-bX-skI" secondAttribute="bottom" constant="1" id="PnG-xD-LbP"/>
-                                                    <constraint firstItem="itQ-lc-ECX" firstAttribute="top" secondItem="f66-dZ-kXd" secondAttribute="top" constant="46" id="QSU-gU-RhR"/>
-                                                    <constraint firstAttribute="trailing" secondItem="0h6-bX-skI" secondAttribute="trailing" id="RXQ-44-zfb"/>
-                                                    <constraint firstAttribute="trailing" secondItem="oWY-Hc-Fin" secondAttribute="trailing" id="VUu-Pj-zxm"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Rh6-QK-L4t" secondAttribute="trailing" id="W6J-Ag-m5n"/>
-                                                    <constraint firstItem="arD-zV-8tB" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="WGe-Fz-XiO"/>
-                                                    <constraint firstItem="oWY-Hc-Fin" firstAttribute="top" secondItem="Qn2-rJ-RGN" secondAttribute="bottom" constant="1" id="aop-ap-SLM"/>
-                                                    <constraint firstItem="Qn2-rJ-RGN" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="bug-64-I4c"/>
-                                                    <constraint firstItem="itQ-lc-ECX" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="c8X-e9-Olf"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Zrq-OS-OxD" secondAttribute="trailing" id="ccp-t4-pux"/>
-                                                    <constraint firstAttribute="trailing" secondItem="arD-zV-8tB" secondAttribute="trailing" id="f6b-LF-vAe"/>
-                                                    <constraint firstItem="Qn2-rJ-RGN" firstAttribute="top" secondItem="wFS-JE-l31" secondAttribute="bottom" constant="1" id="gdf-Ct-fXU"/>
-                                                    <constraint firstAttribute="trailing" secondItem="itQ-lc-ECX" secondAttribute="trailing" id="lVQ-EX-8ti"/>
-                                                    <constraint firstItem="wFS-JE-l31" firstAttribute="top" secondItem="ZXt-oL-FIK" secondAttribute="bottom" constant="1" id="mgX-Yb-YmP"/>
-                                                    <constraint firstItem="jbM-oF-gyO" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="n5t-FJ-GTR"/>
-                                                    <constraint firstItem="wFS-JE-l31" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="oxq-Xe-v0j"/>
-                                                    <constraint firstItem="Q1g-fY-8Ny" firstAttribute="top" secondItem="Zrq-OS-OxD" secondAttribute="bottom" constant="1" id="pBb-07-bOB"/>
-                                                    <constraint firstAttribute="trailing" secondItem="GB2-Ra-5ct" secondAttribute="trailing" id="pOc-2t-jPa"/>
-                                                    <constraint firstItem="0h6-bX-skI" firstAttribute="top" secondItem="Wu4-EC-YIN" secondAttribute="bottom" constant="1" id="pWP-xr-BbH"/>
-                                                    <constraint firstItem="ZXt-oL-FIK" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="vGR-HE-N4l"/>
-                                                    <constraint firstItem="Rh6-QK-L4t" firstAttribute="top" secondItem="oWY-Hc-Fin" secondAttribute="bottom" constant="1" id="vVF-JL-Dsn"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ZXt-oL-FIK" secondAttribute="trailing" id="vXH-eI-Phc"/>
-                                                    <constraint firstItem="yOH-qy-avE" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="vYw-vH-kBD"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Q1g-fY-8Ny" secondAttribute="trailing" id="vwn-Gw-XPN"/>
-                                                    <constraint firstAttribute="trailing" secondItem="q15-aJ-w9V" secondAttribute="trailing" id="wI2-eT-Yh6"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Qn2-rJ-RGN" secondAttribute="trailing" id="yX7-Ku-O9S"/>
-                                                    <constraint firstItem="oWY-Hc-Fin" firstAttribute="leading" secondItem="f66-dZ-kXd" secondAttribute="leading" id="yzT-GI-cf1"/>
+                                                    <constraint firstAttribute="height" constant="250" id="vlU-wN-fgY"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="f66-dZ-kXd" firstAttribute="top" secondItem="wMk-e1-mj8" secondAttribute="top" id="BEf-Vb-rsp"/>
-                                            <constraint firstAttribute="trailing" secondItem="f66-dZ-kXd" secondAttribute="trailing" id="hFN-hu-ic2"/>
-                                            <constraint firstAttribute="bottom" secondItem="f66-dZ-kXd" secondAttribute="bottom" id="m3A-wh-nF6"/>
-                                            <constraint firstItem="f66-dZ-kXd" firstAttribute="leading" secondItem="wMk-e1-mj8" secondAttribute="leading" id="seT-Yt-LVW"/>
+                                            <constraint firstAttribute="trailing" secondItem="kjz-Kr-2nz" secondAttribute="trailing" id="5eh-BX-55o"/>
+                                            <constraint firstItem="kjz-Kr-2nz" firstAttribute="leading" secondItem="3nG-do-9z3" secondAttribute="leading" id="jAc-mr-Jfd"/>
+                                            <constraint firstItem="kjz-Kr-2nz" firstAttribute="top" secondItem="3nG-do-9z3" secondAttribute="top" id="mG2-aQ-DZb"/>
+                                            <constraint firstAttribute="bottom" secondItem="kjz-Kr-2nz" secondAttribute="bottom" id="sdq-ia-KAW"/>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="wMk-e1-mj8" firstAttribute="leading" secondItem="FUi-FS-dxH" secondAttribute="leading" id="COs-TZ-YHx"/>
-                                    <constraint firstAttribute="bottom" secondItem="wMk-e1-mj8" secondAttribute="bottom" id="DRZ-4R-J9V"/>
-                                    <constraint firstAttribute="trailing" secondItem="wMk-e1-mj8" secondAttribute="trailing" id="XTo-Ag-sml"/>
-                                    <constraint firstItem="wMk-e1-mj8" firstAttribute="top" secondItem="FUi-FS-dxH" secondAttribute="top" id="XwU-IS-kyg"/>
-                                    <constraint firstItem="f66-dZ-kXd" firstAttribute="width" secondItem="FUi-FS-dxH" secondAttribute="width" id="lTe-gw-xKW"/>
+                                    <constraint firstAttribute="bottom" secondItem="3nG-do-9z3" secondAttribute="bottom" id="IPK-oW-JKn"/>
+                                    <constraint firstAttribute="trailing" secondItem="3nG-do-9z3" secondAttribute="trailing" id="Nud-YU-4b0"/>
+                                    <constraint firstItem="3nG-do-9z3" firstAttribute="leading" secondItem="tLW-VB-NhX" secondAttribute="leading" id="ybj-cd-HrU"/>
+                                    <constraint firstItem="3nG-do-9z3" firstAttribute="top" secondItem="tLW-VB-NhX" secondAttribute="top" id="zx0-Wo-RzH"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vazio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVr-R8-zvD">
-                                <rect key="frame" x="0.0" y="97" width="335" height="71"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vazio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYl-FL-f6d">
+                                <rect key="frame" x="0.0" y="95" width="335" height="105"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7f-uc-NqA" userLabel="VE Titulo Historico">
-                                <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TBf-NG-QT4">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fnj-fZ-eLg" userLabel="VE Titulo Historico">
+                                <rect key="frame" x="0.0" y="20" width="335" height="50"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aMH-Qb-mqn">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Histórico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNO-KE-6Bb">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Histórico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA6-2x-pnT">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="UNO-KE-6Bb" firstAttribute="leading" secondItem="TBf-NG-QT4" secondAttribute="leading" id="Ggi-Cj-K8E"/>
-                                        <constraint firstItem="UNO-KE-6Bb" firstAttribute="top" secondItem="TBf-NG-QT4" secondAttribute="top" id="WrD-rh-11f"/>
-                                        <constraint firstAttribute="trailing" secondItem="UNO-KE-6Bb" secondAttribute="trailing" id="Yvu-ga-h6B"/>
-                                        <constraint firstAttribute="bottom" secondItem="UNO-KE-6Bb" secondAttribute="bottom" id="m53-uR-peP"/>
+                                        <constraint firstItem="NA6-2x-pnT" firstAttribute="leading" secondItem="aMH-Qb-mqn" secondAttribute="leading" id="Zc5-hK-nVf"/>
+                                        <constraint firstAttribute="bottom" secondItem="NA6-2x-pnT" secondAttribute="bottom" id="awb-XZ-7SN"/>
+                                        <constraint firstItem="NA6-2x-pnT" firstAttribute="top" secondItem="aMH-Qb-mqn" secondAttribute="top" id="evd-qi-rlg"/>
+                                        <constraint firstAttribute="trailing" secondItem="NA6-2x-pnT" secondAttribute="trailing" id="lZt-mp-giy"/>
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="wJq-su-BrU"/>
+                                    <constraint firstAttribute="height" constant="50" id="dIN-Tq-95f"/>
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZ9-ZZ-aIT" userLabel="VE Botao Limpar">
-                                <rect key="frame" x="0.0" y="205" width="335" height="45"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cOb-ib-PCN">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4Z-8T-GYq" userLabel="VE Botao Limpar">
+                                <rect key="frame" x="0.0" y="200" width="335" height="50"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qDs-db-UCC">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z55-dC-gUz">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIH-oG-Mqu">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="tintColor" red="0.98431372549999996" green="0.12549019610000001" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" title="Limpar"/>
                                             <connections>
-                                                <action selector="limparHistorico" destination="ZhR-3q-vXm" eventType="touchUpInside" id="NKA-Xd-OfW"/>
+                                                <action selector="acaoBotaoLimpar" destination="fml-vK-DNn" eventType="touchUpInside" id="B8u-3e-PBA"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Z55-dC-gUz" firstAttribute="leading" secondItem="cOb-ib-PCN" secondAttribute="leading" id="WhP-rh-ycm"/>
-                                        <constraint firstAttribute="trailing" secondItem="Z55-dC-gUz" secondAttribute="trailing" id="asN-4f-wIW"/>
-                                        <constraint firstAttribute="bottom" secondItem="Z55-dC-gUz" secondAttribute="bottom" id="jFZ-Qt-KyN"/>
-                                        <constraint firstItem="Z55-dC-gUz" firstAttribute="top" secondItem="cOb-ib-PCN" secondAttribute="top" id="uOT-Ol-ccC"/>
+                                        <constraint firstItem="wIH-oG-Mqu" firstAttribute="top" secondItem="qDs-db-UCC" secondAttribute="top" id="9nq-cQ-DQZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="wIH-oG-Mqu" secondAttribute="trailing" id="Yxo-YX-y9E"/>
+                                        <constraint firstAttribute="bottom" secondItem="wIH-oG-Mqu" secondAttribute="bottom" id="euP-QP-V94"/>
+                                        <constraint firstItem="wIH-oG-Mqu" firstAttribute="leading" secondItem="qDs-db-UCC" secondAttribute="leading" id="ySO-pN-dfD"/>
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="4af-qp-eyi"/>
+                                    <constraint firstAttribute="height" constant="50" id="UcK-Gh-DkD"/>
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="F7f-uc-NqA" firstAttribute="top" secondItem="qC0-40-5fo" secondAttribute="top" id="1NS-Gp-kRg"/>
-                            <constraint firstItem="F7f-uc-NqA" firstAttribute="trailing" secondItem="CVr-R8-zvD" secondAttribute="trailing" id="8dn-uE-aKR"/>
-                            <constraint firstItem="F7f-uc-NqA" firstAttribute="leading" secondItem="FUi-FS-dxH" secondAttribute="leading" id="FMy-hy-FPu"/>
-                            <constraint firstItem="F7f-uc-NqA" firstAttribute="leading" secondItem="CVr-R8-zvD" secondAttribute="leading" id="IWt-C3-wqp"/>
-                            <constraint firstItem="FUi-FS-dxH" firstAttribute="leading" secondItem="qC0-40-5fo" secondAttribute="leading" id="LPZ-vt-5C7"/>
-                            <constraint firstItem="F7f-uc-NqA" firstAttribute="leading" secondItem="qC0-40-5fo" secondAttribute="leading" id="RJ2-Tr-JvL"/>
-                            <constraint firstAttribute="trailing" secondItem="F7f-uc-NqA" secondAttribute="trailing" id="S9s-pU-9bv"/>
-                            <constraint firstAttribute="trailing" secondItem="FUi-FS-dxH" secondAttribute="trailing" id="Vku-5y-jSY"/>
-                            <constraint firstItem="F7f-uc-NqA" firstAttribute="trailing" secondItem="FUi-FS-dxH" secondAttribute="trailing" id="VxW-HV-7Wm"/>
-                            <constraint firstItem="F7f-uc-NqA" firstAttribute="top" secondItem="FUi-FS-dxH" secondAttribute="top" id="Z7D-Zv-kKC"/>
-                            <constraint firstItem="FUi-FS-dxH" firstAttribute="top" secondItem="qC0-40-5fo" secondAttribute="top" id="dg8-qD-bwz"/>
-                            <constraint firstItem="CVr-R8-zvD" firstAttribute="top" secondItem="F7f-uc-NqA" secondAttribute="bottom" constant="52" id="jFV-e0-ZhX"/>
-                            <constraint firstItem="CVr-R8-zvD" firstAttribute="trailing" secondItem="jZ9-ZZ-aIT" secondAttribute="trailing" id="n8x-Hd-QpG"/>
-                            <constraint firstItem="B0D-CZ-ZW8" firstAttribute="top" secondItem="FUi-FS-dxH" secondAttribute="bottom" id="oA0-VR-etc"/>
-                            <constraint firstItem="CVr-R8-zvD" firstAttribute="leading" secondItem="jZ9-ZZ-aIT" secondAttribute="leading" id="oPB-AG-fWs"/>
-                            <constraint firstItem="jZ9-ZZ-aIT" firstAttribute="bottom" secondItem="FUi-FS-dxH" secondAttribute="bottom" id="oay-hV-Ema"/>
-                            <constraint firstItem="jZ9-ZZ-aIT" firstAttribute="bottom" secondItem="B0D-CZ-ZW8" secondAttribute="top" id="uZr-Dz-Qip"/>
-                            <constraint firstItem="jZ9-ZZ-aIT" firstAttribute="top" secondItem="CVr-R8-zvD" secondAttribute="bottom" constant="37" id="zm4-0V-FY4"/>
+                            <constraint firstItem="tLW-VB-NhX" firstAttribute="leading" secondItem="ZwC-ed-TEl" secondAttribute="leading" id="363-eB-Mcg"/>
+                            <constraint firstItem="kjz-Kr-2nz" firstAttribute="width" secondItem="ZwC-ed-TEl" secondAttribute="width" id="3qY-n8-Te4"/>
+                            <constraint firstAttribute="trailing" secondItem="Fnj-fZ-eLg" secondAttribute="trailing" id="4b7-hF-ERm"/>
+                            <constraint firstItem="I4Z-8T-GYq" firstAttribute="top" secondItem="pYl-FL-f6d" secondAttribute="bottom" id="58Q-kQ-qWF"/>
+                            <constraint firstItem="pYl-FL-f6d" firstAttribute="leading" secondItem="ZwC-ed-TEl" secondAttribute="leading" id="5DR-Te-BvO"/>
+                            <constraint firstItem="I4Z-8T-GYq" firstAttribute="leading" secondItem="ZwC-ed-TEl" secondAttribute="leading" id="8FU-fJ-AgL"/>
+                            <constraint firstAttribute="trailing" secondItem="pYl-FL-f6d" secondAttribute="trailing" id="9ZP-p0-umZ"/>
+                            <constraint firstItem="Fnj-fZ-eLg" firstAttribute="leading" secondItem="ZwC-ed-TEl" secondAttribute="leading" id="OsR-QG-K2I"/>
+                            <constraint firstItem="pYl-FL-f6d" firstAttribute="top" secondItem="Fnj-fZ-eLg" secondAttribute="bottom" constant="25" id="Rrr-PL-WGy"/>
+                            <constraint firstItem="Fnj-fZ-eLg" firstAttribute="top" secondItem="esu-YE-dZa" secondAttribute="bottom" id="T4e-WQ-rT5"/>
+                            <constraint firstAttribute="trailing" secondItem="I4Z-8T-GYq" secondAttribute="trailing" id="ZSZ-7G-gSl"/>
+                            <constraint firstAttribute="trailing" secondItem="tLW-VB-NhX" secondAttribute="trailing" id="bYd-IQ-xpK"/>
+                            <constraint firstItem="tLW-VB-NhX" firstAttribute="top" secondItem="esu-YE-dZa" secondAttribute="bottom" id="es8-Nc-QbS"/>
+                            <constraint firstItem="C06-D5-BgW" firstAttribute="top" secondItem="I4Z-8T-GYq" secondAttribute="bottom" id="njQ-x2-blC"/>
+                            <constraint firstItem="C06-D5-BgW" firstAttribute="top" secondItem="tLW-VB-NhX" secondAttribute="bottom" id="vRL-v9-ZxJ"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="335" height="250"/>
                     <connections>
-                        <outlet property="botaoHistorico01" destination="eMR-iV-UOi" id="3C9-z5-v0j"/>
-                        <outlet property="botaoHistorico02" destination="9y8-N3-A57" id="VbC-uV-kSo"/>
-                        <outlet property="botaoHistorico03" destination="nL9-Mp-4IM" id="qp5-HM-abD"/>
-                        <outlet property="botaoHistorico04" destination="Ysh-m0-2W2" id="9N9-FE-8BE"/>
-                        <outlet property="botaoHistorico05" destination="S5i-la-LTN" id="Soa-YM-lZ3"/>
-                        <outlet property="botaoHistorico06" destination="fqK-F3-P2Q" id="hA5-IC-hP0"/>
-                        <outlet property="botaoHistorico07" destination="qFS-Ly-8zt" id="FWa-Cf-bGN"/>
-                        <outlet property="botaoHistorico08" destination="ckJ-JZ-TQE" id="JlX-xQ-8CO"/>
-                        <outlet property="botaoHistorico09" destination="PiS-KA-1Ui" id="OmT-py-xIG"/>
-                        <outlet property="botaoHistorico10" destination="Znw-La-Idy" id="NGu-rw-h6V"/>
-                        <outlet property="botaoHistorico11" destination="XW2-ba-QiR" id="wzN-68-0Mh"/>
-                        <outlet property="botaoHistorico12" destination="TaW-1B-t9o" id="88X-7d-pTJ"/>
-                        <outlet property="botaoHistorico13" destination="I5Y-28-cbH" id="kgg-1x-hLT"/>
-                        <outlet property="botaoHistorico14" destination="1ME-3H-N6L" id="pgl-vT-AOv"/>
-                        <outlet property="botaoHistorico15" destination="IUh-jC-isI" id="uhL-kW-8r5"/>
-                        <outlet property="constraintAlturaConteudoSV" destination="ARn-4y-rV9" id="aP2-0M-hXi"/>
-                        <outlet property="historicoVazio" destination="CVr-R8-zvD" id="O8d-sW-BPa"/>
-                        <outlet property="outletBotaoLimpar" destination="Z55-dC-gUz" id="Haf-Ah-B9P"/>
-                        <outlet property="outletConteudoScrollView" destination="f66-dZ-kXd" id="rkX-Em-WD9"/>
-                        <outlet property="outletLabelTituloHistorico" destination="UNO-KE-6Bb" id="Is4-NN-IOp"/>
-                        <outlet property="outletVisualEffectBotaoLimpar" destination="jZ9-ZZ-aIT" id="q0n-kJ-fUE"/>
-                        <outlet property="scrollViewOutlet" destination="wMk-e1-mj8" id="hnB-bg-6Fn"/>
+                        <outlet property="outletBotaoLimpar" destination="wIH-oG-Mqu" id="7wh-aP-fMO"/>
+                        <outlet property="outletConstraintAlturaStackView" destination="vlU-wN-fgY" id="VBx-g5-hYM"/>
+                        <outlet property="outletLabelHistoricoVazio" destination="pYl-FL-f6d" id="TBx-Wt-p2d"/>
+                        <outlet property="outletLabelTituloHistorico" destination="NA6-2x-pnT" id="P2O-HY-Aom"/>
+                        <outlet property="outletScrollViewHistorico" destination="3nG-do-9z3" id="nlc-Ct-3oL"/>
+                        <outlet property="outletViewHistorico" destination="kjz-Kr-2nz" id="33I-eB-I90"/>
+                        <outlet property="outletViewPaiBotaoLimpar" destination="I4Z-8T-GYq" id="U42-SA-IYX"/>
+                        <outlet property="outletViewPrincipalHistorico" destination="ZwC-ed-TEl" id="rHw-XS-3jY"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mgN-zV-aXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="llN-P7-TiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="915.5" y="1144"/>
+            <point key="canvasLocation" x="1223.5" y="1245"/>
         </scene>
         <!--Tema De Cores View Controller-->
         <scene sceneID="KRv-K7-0Hg">
@@ -1871,7 +1258,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hgm-Yb-WHV" userLabel="View Pai do Scroll View">
                                 <rect key="frame" x="0.0" y="0.0" width="335" height="600"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3K-b4-qhT">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3K-b4-qhT">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ja-Um-wiy" userLabel="Conteudo do SV">
@@ -2218,6 +1605,7 @@
                     <connections>
                         <outlet property="outletConstraintAlturaConteudoSV" destination="ioT-wg-1Qz" id="fFr-Ct-Oye"/>
                         <outlet property="outletLabelTituloMenuCores" destination="2Kc-WT-hs6" id="2dW-OX-YPj"/>
+                        <outlet property="outletScrollViewCores" destination="a3K-b4-qhT" id="b7O-on-i6z"/>
                         <outlet property="outletViewBotaoAppleClassic" destination="6yw-mb-3Qh" id="1Yp-ly-QqV"/>
                         <outlet property="outletViewBotaoDroid" destination="KEo-VK-yU2" id="enU-6h-ZrF"/>
                         <outlet property="outletViewBotaoGatsu" destination="ik4-7k-Gk0" id="pW3-wN-bwf"/>
@@ -2231,7 +1619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6AB-jE-NeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82.5" y="1319"/>
+            <point key="canvasLocation" x="-239.5" y="1420"/>
         </scene>
         <!--Mais Opcoes View Controller-->
         <scene sceneID="orv-47-j0X">
@@ -2254,7 +1642,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yd0-dT-ZfE" userLabel="View Pai do Scroll View">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                             <subviews>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnF-Ks-ZhB">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnF-Ks-ZhB">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJb-9h-vlX" userLabel="Conteudo do SV">
@@ -2667,6 +2055,7 @@
                         <outlet property="outletLabelTituloCasasDecimais" destination="Y1y-yD-c5q" id="Wlf-aQ-6op"/>
                         <outlet property="outletLabelTituloMenu" destination="i59-oi-OnK" id="uG2-oi-VLA"/>
                         <outlet property="outletPickerViewIdiomas" destination="ubz-e0-D4g" id="rFD-GB-Lga"/>
+                        <outlet property="outletScrollViewMaisOpcoes" destination="fnF-Ks-ZhB" id="XbW-Ud-8Qc"/>
                         <outlet property="outletStepperQuantidadeCasasDecimais" destination="ZBy-cV-ATC" id="n2h-0U-i9M"/>
                         <outlet property="outletSwitchBotaoPorCentoClassico" destination="ktE-k7-Z7V" id="eTM-Hp-lXi"/>
                         <outlet property="outletSwitchEsconderBotaoDegRad" destination="AYX-Nd-Gyi" id="w92-AR-4Hg"/>
@@ -2680,7 +2069,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4RJ-WT-J5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327" y="525"/>
+            <point key="canvasLocation" x="1741" y="531"/>
         </scene>
         <!--Ajuda View Controller-->
         <scene sceneID="Zhq-fl-4vR">
@@ -2697,7 +2086,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5K-43-cUr" userLabel="View Pai do Scroll View">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udc-c1-dOm">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udc-c1-dOm">
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TK0-sy-ggp" userLabel="View de Objetos SV">
@@ -2839,11 +2228,12 @@
                         <outlet property="outletLabelDescricaoInfinito" destination="BJx-l5-Luv" id="R7w-h1-ngT"/>
                         <outlet property="outletLabelDescricaoNan" destination="TdH-ur-Pmp" id="Rug-wY-d3U"/>
                         <outlet property="outletLabelTituloAjuda" destination="fow-dd-p1Y" id="rgL-Yg-wTP"/>
+                        <outlet property="outletScrollViewAjuda" destination="udc-c1-dOm" id="GcX-cE-fWC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bke-zq-WeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="421" y="1219"/>
+            <point key="canvasLocation" x="452" y="1320"/>
         </scene>
     </scenes>
 </document>

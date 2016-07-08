@@ -13,11 +13,19 @@ class AjudaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         aplicaIdiomaAjuda(idioma)
+        
+        // Ajusta a posição do indicador de rolamento:
+        outletScrollViewAjuda.scrollIndicatorInsets = UIEdgeInsets(top: 45, left: 0, bottom: 0, right: 0)
+        
     }
     
     // Outlets:
+    
+        /// Scroll Views:
+        @IBOutlet var outletScrollViewAjuda: UIScrollView!
+    
+    
     @IBOutlet var outletLabelTituloAjuda: UILabel!
     @IBOutlet var outletLabelDescricaoInfinito: UILabel!
     @IBOutlet var outletLabelDescricaoNan: UILabel!

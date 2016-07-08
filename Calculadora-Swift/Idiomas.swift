@@ -180,7 +180,7 @@ let dicionarioLabelHistoricoVazio: [String: String] = [
     "Mandarim" : "空"
 ]
 
-extension HistoricoViewController {
+extension HistoricoCalculosViewController {
     
     /**
      
@@ -193,8 +193,9 @@ extension HistoricoViewController {
     func aplicaIdiomaHistorico(idiomaSendoUsado: String) {
         outletLabelTituloHistorico.text = dicionarioTituloHistorico[idiomaSendoUsado]
         outletBotaoLimpar.setTitle(dicionarioBotaoLimpar[idiomaSendoUsado], forState: UIControlState.Normal)
-        historicoVazio.text = dicionarioLabelHistoricoVazio[idiomaSendoUsado]
+        outletLabelHistoricoVazio.text = dicionarioLabelHistoricoVazio[idiomaSendoUsado]
     }
+    
 }
 
 
