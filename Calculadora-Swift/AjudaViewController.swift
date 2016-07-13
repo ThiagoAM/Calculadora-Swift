@@ -60,7 +60,7 @@ class AjudaViewController: UIViewController {
         let tipoEEstadoDeTela = detectaTipoDeTela(UIScreen.mainScreen().bounds)
         
         if tipoEEstadoDeTela.containsString("ipad") {
-            return 350.0
+            return 325.0
         } else {
             return 250.0
         }

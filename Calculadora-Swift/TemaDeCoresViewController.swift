@@ -24,7 +24,7 @@ class TemaDeCoresViewController: UIViewController {
         // Ajusta a posição do indicador de rolamento:
         outletScrollViewCores.scrollIndicatorInsets = UIEdgeInsets(top: 45, left: 0, bottom: 0, right: 0)
         
-        outletConstraintAlturaConteudoSV.constant = calculaAlturaDeConteudoDoScrollViewTemaCores(9)
+        outletConstraintAlturaConteudoSV.constant = calculaAlturaDeConteudoDoScrollViewTemaCores(10)
     }
     
     // Define o tamanho do popover:
@@ -60,6 +60,8 @@ class TemaDeCoresViewController: UIViewController {
     @IBOutlet var outletViewBotaoRevolutionaryGirl: UIView!
     @IBOutlet var outletViewBotaoMinimalPaper: UIView!    
     @IBOutlet var outletViewBotaoSensai: UIView!
+    @IBOutlet var outletViewArlert: UIView!
+    
     
     
     
@@ -86,6 +88,7 @@ class TemaDeCoresViewController: UIViewController {
         colocaBordaEmUmView(outletViewBotaoRevolutionaryGirl, cor: UIColor.whiteColor(), larguraLinha: 0.0)
         colocaBordaEmUmView(outletViewBotaoMinimalPaper, cor: UIColor.whiteColor(), larguraLinha: 0.0)
         colocaBordaEmUmView(outletViewBotaoSensai, cor: UIColor.whiteColor(), larguraLinha: 0.0)
+        colocaBordaEmUmView(outletViewArlert, cor: UIColor.whiteColor(), larguraLinha: 0.0)
     }
     
     /**
@@ -127,10 +130,12 @@ class TemaDeCoresViewController: UIViewController {
             return outletViewBotaoRevolutionaryGirl
         case "Minimal Paper":
             return outletViewBotaoMinimalPaper
-        case "細い":
+        case "Classic Night":
             return outletViewBotaoSensai
+        case "Arlert":
+            return outletViewArlert
         default:
-            return nil
+            return outletViewBotaoMusk
         }
     }
     

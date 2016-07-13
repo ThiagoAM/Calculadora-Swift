@@ -1308,11 +1308,11 @@ extension ViewController {
             colocaBordaEmTodosOsBotoesTecladoCalculo(UIColor(white:0.74, alpha:1.0), larguraLinhas: 0.25)
             
             
-        case "細い":
+        case "Classic Night":
             
             
             // ----------------------------
-            // CRIAÇÃO DAS CORES (細い)
+            // CRIAÇÃO DAS CORES (Classic Night)
             // ----------------------------
             //
             
@@ -1418,9 +1418,120 @@ extension ViewController {
             // Altera a cor e largura da borda do teclado:
             colocaBordaEmTodosOsBotoesTecladoCalculo(UIColor.blackColor().colorWithAlphaComponent(0.5), larguraLinhas: 0.25)
             
+        
+        case "Arlert":
             
+            
+            // ----------------------------
+            // CRIAÇÃO DAS CORES (Arlert)
+            // ----------------------------
+            //
+            
+            let corBarraDeStatus = UIColor(red:0.31, green:0.29, blue:0.26, alpha:1.0)
+            
+            let corMenuOpcoesAberto = UIColor(red:0.31, green:0.29, blue:0.26, alpha:1.0)
+            
+            let corDeFundo = UIColor.whiteColor()
+            
+            
+            let corBotaoC = UIColor(red:0.15, green:0.14, blue:0.12, alpha:1.0)
+            let corBotaoDel = UIColor(red:0.15, green:0.14, blue:0.12, alpha:1.0)
+            
+            let corParenteses = UIColor(red:0.15, green:0.14, blue:0.12, alpha:1.0)
+            
+            let corTecladoNumerico = UIColor(red:0.58, green:0.56, blue:0.48, alpha:1.0)
+            
+            let corTecladoVirgulaEMaisOuMenos = UIColor(red:0.58, green:0.56, blue:0.48, alpha:1.0)
+            
+            let corOperacoesSimples01 = UIColor(red:0.88, green:0.59, blue:0.0, alpha:1.0)
+            let corOperacoesSimples02 = UIColor(red:0.88, green:0.59, blue:0.0, alpha:1.0)
+            
+            let corOperacoesComplexas01 = UIColor(red:0.31, green:0.29, blue:0.26, alpha:1.0)
+            let corOperacoesComplexas02 = UIColor(red:0.31, green:0.29, blue:0.26, alpha:1.0)
+            
+            
+            
+            // ----------------
+            // CORES DE FUNDO:
+            // ----------------
+            
+            // Altera a cor da barra de status:
+            outletBarraDeStatus.backgroundColor = corBarraDeStatus
+            
+            
+            // Altera a cor de fundo dos botões de configurações:
+            aplicaCorDeFundoMenuDeConfiguracoes(corMenuOpcoesAberto)
+            
+            
+            // Altera a cor de fundo da calculadora:
+            mudaCorDeFundoDaCalculadora(corDeFundo)
+            
+            
+            // Altera cor de fundo das teclas:
+            colocaCorDeFundoEmUmBotao(cOutlet, cor: corBotaoC, opacidadeDaCor: 1.0)
+            colocaCorDeFundoEmUmBotao(delOutlet, cor: corBotaoDel, opacidadeDaCor: 1.0)
+            
+            alteraCorFundoTecladoParenteses(corParenteses, opacidadeDaCor: 1.0)
+            
+            alteraCorFundoTecladoNumerico(corTecladoNumerico, opacidadeDaCor: 1.0)
+            alteraCorFundoTecladoVirgulaEMaisOuMenos(corTecladoVirgulaEMaisOuMenos, opacidadeDaCor: 1.0)
+            
+            alteraCorFundoTecladoOperacoesSimples01(corOperacoesSimples01, opacidadeDaCor: 1.0)
+            alteraCorFundoTecladoOperacoesSimples02(corOperacoesSimples02, opacidadeDaCor: 1.0)
+            
+            alteraCorFundoTecladoOperacoesComplexas01(corOperacoesComplexas01, opacidadeDaCor: 1.0)
+            alteraCorFundoTecladoOperacoesComplexas02(corOperacoesComplexas02, opacidadeDaCor: 1.0)
+            
+            
+            // ---------------------
+            // CORES DE CARACTERES:
+            // ---------------------
+            
+            let corCaracteresMenuOpcoesFechado = UIColor(red:0.2, green:0.18, blue:0.16, alpha:1.0)
+            let corCaracteresMenuOpcoesAberto = UIColor.whiteColor()
+            
+            let corCaractereUltimoResultadoEMemoria = UIColor(red:0.2, green:0.18, blue:0.16, alpha:1.0)
+            let corCaractereResultadoFinalECalculo = UIColor(red:0.2, green:0.18, blue:0.16, alpha:1.0)
+            
+            let corCaractereBotaoGraRad = UIColor(red:0.2, green:0.18, blue:0.16, alpha:1.0)
+            
+            // Altera a cor dos caracteres do menu de opções:
+            alteraCorCaracteresMenuDeOpcoesFechado(corCaracteresMenuOpcoesFechado)
+            alteraCorCaracteresMenuDeOpcoesAberto(corCaracteresMenuOpcoesAberto)
+            
+            // Altera a cor dos botões de memória:
+            alteraCorCaractereBotoesMemoria(corCaractereUltimoResultadoEMemoria)
+            
+            // Altera a cor dos caracteres de: Resultado Antigo, Resultado Final e Cálculo:
+            alteraCorCaracteresResultadosECalculo(corCaractereResultadoFinalECalculo)
+            
+            // Altera a cor do botão Deg ou Rad:
+            outletBotaoDegOuRad.setTitleColor(corCaractereBotaoGraRad, forState: UIControlState.Normal)
+            
+            // Altera a cor dos caracteres das teclas:
+            alteraCorCaracteresTecladoCEDel(UIColor.whiteColor())
+            alteraCorCaracteresTecladoParenteses(UIColor.whiteColor())
+            
+            alteraCorCaracteresTecladoNumerico(UIColor.whiteColor())
+            alteraCorCaracteresTecladoVirgulaEMaisOuMenos(UIColor.whiteColor())
+            
+            alteraCorCaracteresTecladoOperacoesSimples01(UIColor.whiteColor())
+            alteraCorCaracteresTecladoOperacoesSimples02(UIColor.whiteColor())
+            
+            alteraCorCaracteresTecladoOperacoesComplexas01(UIColor.whiteColor())
+            alteraCorCaracteresTecladoOperacoesComplexas02(UIColor.whiteColor())
+            
+            
+            // -------------------
+            // BORDA DO TECLADO:
+            // -------------------
+            
+            // Altera a cor e largura da borda do teclado:
+            colocaBordaEmTodosOsBotoesTecladoCalculo(UIColor.blackColor().colorWithAlphaComponent(0.5), larguraLinhas: 0.25)
+            
+        
         default:
-            viewPrincipal.backgroundColor = corPreto
+            alteraTemaDaCalculadora(nomeTemaDeCorPadrao)
         }
     }
     

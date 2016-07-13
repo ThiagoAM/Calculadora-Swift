@@ -1476,7 +1476,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReD-j4-9yy">
                                                                 <rect key="frame" x="36" y="0.0" width="299" height="45"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <state key="normal" title="細い">
+                                                                <state key="normal" title="Classic Night">
                                                                     <color key="titleColor" red="0.68627450980392157" green="0.2627450980392157" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -1489,10 +1489,36 @@
                                                             <constraint firstAttribute="height" constant="45" id="eNv-XZ-jIU"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kk-d5-d9x" userLabel="View Arlert">
+                                                        <rect key="frame" x="0.0" y="460" width="335" height="45"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="●" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOo-rs-wPn">
+                                                                <rect key="frame" x="8" y="0.0" width="20" height="45"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YED-Yb-Ovr">
+                                                                <rect key="frame" x="36" y="0.0" width="299" height="45"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <state key="normal" title="Arlert">
+                                                                    <color key="titleColor" red="0.85098039215686272" green="0.52156862745098043" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="toqueEmUmDosTemasDeCor:" destination="QZn-xY-is3" eventType="touchUpInside" id="RSx-QR-yo0"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.24313725490196078" green="0.22745098039215686" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="45" id="KL1-fH-T82"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="JqB-gU-Uct" secondAttribute="trailing" id="2wz-YE-WSy"/>
                                                     <constraint firstItem="NpE-DK-bei" firstAttribute="top" secondItem="fGD-1x-Xmr" secondAttribute="bottom" constant="1" id="47R-4G-DLQ"/>
+                                                    <constraint firstItem="4kk-d5-d9x" firstAttribute="top" secondItem="NpE-DK-bei" secondAttribute="bottom" constant="1" id="5jr-y6-ggH"/>
                                                     <constraint firstItem="QgT-Wi-T9Q" firstAttribute="leading" secondItem="9Ja-Um-wiy" secondAttribute="leading" id="AvK-RL-dj2"/>
                                                     <constraint firstItem="QgT-Wi-T9Q" firstAttribute="top" secondItem="9e5-lK-ghB" secondAttribute="bottom" constant="1" id="Dda-YE-EQw"/>
                                                     <constraint firstItem="JqB-gU-Uct" firstAttribute="top" secondItem="9Ja-Um-wiy" secondAttribute="top" constant="46" id="EMo-20-74y"/>
@@ -1503,8 +1529,10 @@
                                                     <constraint firstItem="6yw-mb-3Qh" firstAttribute="leading" secondItem="9Ja-Um-wiy" secondAttribute="leading" id="Qhy-6d-gub"/>
                                                     <constraint firstItem="NpE-DK-bei" firstAttribute="leading" secondItem="9Ja-Um-wiy" secondAttribute="leading" id="Ql5-3v-viZ"/>
                                                     <constraint firstItem="8b1-py-dMh" firstAttribute="leading" secondItem="9Ja-Um-wiy" secondAttribute="leading" id="TKJ-gT-Bw0"/>
+                                                    <constraint firstItem="4kk-d5-d9x" firstAttribute="leading" secondItem="9Ja-Um-wiy" secondAttribute="leading" id="TmU-fD-07Y"/>
                                                     <constraint firstAttribute="trailing" secondItem="ik4-7k-Gk0" secondAttribute="trailing" id="UqK-bF-PMs"/>
                                                     <constraint firstItem="fGD-1x-Xmr" firstAttribute="leading" secondItem="9Ja-Um-wiy" secondAttribute="leading" id="VEc-1p-5s4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4kk-d5-d9x" secondAttribute="trailing" id="VPo-5J-bCn"/>
                                                     <constraint firstItem="6yw-mb-3Qh" firstAttribute="top" secondItem="KEo-VK-yU2" secondAttribute="bottom" constant="1" id="Vz6-Ht-TQo"/>
                                                     <constraint firstAttribute="trailing" secondItem="6yw-mb-3Qh" secondAttribute="trailing" id="XGe-tf-5vi"/>
                                                     <constraint firstItem="ik4-7k-Gk0" firstAttribute="leading" secondItem="9Ja-Um-wiy" secondAttribute="leading" id="ZKe-Hy-mNp"/>
@@ -1606,6 +1634,7 @@
                         <outlet property="outletConstraintAlturaConteudoSV" destination="ioT-wg-1Qz" id="fFr-Ct-Oye"/>
                         <outlet property="outletLabelTituloMenuCores" destination="2Kc-WT-hs6" id="2dW-OX-YPj"/>
                         <outlet property="outletScrollViewCores" destination="a3K-b4-qhT" id="b7O-on-i6z"/>
+                        <outlet property="outletViewArlert" destination="4kk-d5-d9x" id="RdR-tf-OtG"/>
                         <outlet property="outletViewBotaoAppleClassic" destination="6yw-mb-3Qh" id="1Yp-ly-QqV"/>
                         <outlet property="outletViewBotaoDroid" destination="KEo-VK-yU2" id="enU-6h-ZrF"/>
                         <outlet property="outletViewBotaoGatsu" destination="ik4-7k-Gk0" id="pW3-wN-bwf"/>
