@@ -217,7 +217,10 @@ extension ViewController: DelegadoHistoricoCalculos {
     
     /**
      
+     Comunica o histórico de cálculos entre o ViewController e o TelaDeHistóricoViewController.
      
+     - Parâmetros: Histórico e número do botão tocado.
+     - Retorna: Nada.
      
      */
     func comunicadorDeHistoricoDeCalculos(historico: String?, numeroDoBotao: Int?) {

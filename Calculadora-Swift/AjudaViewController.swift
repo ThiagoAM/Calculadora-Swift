@@ -16,8 +16,7 @@ class AjudaViewController: UIViewController {
         aplicaIdiomaAjuda(idioma)
         
         // Ajusta a posição do indicador de rolamento:
-        outletScrollViewAjuda.scrollIndicatorInsets = UIEdgeInsets(top: 45, left: 0, bottom: 0, right: 0)
-        
+        outletScrollViewAjuda.scrollIndicatorInsets = UIEdgeInsets(top: 45, left: 0, bottom: 0, right: 0)   
     }
     
     // Outlets:

@@ -291,6 +291,22 @@ class MaisOpcoesViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     /**
      
+     Abre o link do código fonte do projeto `Calculadora Swift` no GitHub.
+     
+     - Parâmetros: Nenhum.
+     - Retorna: Nada.
+     
+    */
+    @IBAction func acaoBotaoVerCodigoFonte() {
+        
+        UIApplication.sharedApplication().openURL(NSURL(string: "https://github.com/ThiagoAM/calculadora-swift-1-0")!)
+        
+    }
+    
+    
+    
+    /**
+     
      Atualiza o estado dos switches do menu de mais opções.
      
      - Parâmetros: Nenhum.
