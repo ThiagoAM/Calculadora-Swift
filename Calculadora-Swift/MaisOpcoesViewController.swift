@@ -299,10 +299,8 @@ class MaisOpcoesViewController: UIViewController, UIPickerViewDelegate, UIPicker
     */
     @IBAction func acaoBotaoVerCodigoFonte() {
         
-        UIApplication.sharedApplication().openURL(NSURL(string: "https://github.com/ThiagoAM/calculadora-swift-1-0")!)
-        
+        UIApplication.sharedApplication().openURL(NSURL(string: "https://github.com/ThiagoAM/Calculadora-Swift")!)
     }
-    
     
     
     /**
